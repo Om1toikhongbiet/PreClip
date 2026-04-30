@@ -1,6 +1,6 @@
 # PreClip - Advanced Clipboard Manager
 
-A lightweight clipboard manager built with Electron that monitors your system clipboard and allows you to easily manage, copy, edit, and paste multiple items from your clipboard history.
+A lightweight clipboard manager built with ElectronJS that monitors your system clipboard and allows you to easily manage, copy, edit, and paste multiple items from your clipboard history. Features a built-in image editor powered by TUI Image Editor.
 
 ## Features
 
@@ -20,7 +20,7 @@ A lightweight clipboard manager built with Electron that monitors your system cl
 ## Installation
 
 ### Option 1: Download Installer (Recommended)
-1. Download the latest `.msi` or `.exe` installer from the [Releases](https://github.com/yourusername/preclip/releases) page
+1. Download the latest `.exe` installer from the [Releases](https://github.com/Om1toikhongbiet/PreClip/releases) page
 2. Run the installer
 3. PreClip will be added to your applications and can be launched from Start Menu
 
@@ -33,8 +33,8 @@ A lightweight clipboard manager built with Electron that monitors your system cl
 **Steps:**
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/preclip.git
-cd preclip
+git clone https://github.com/Om1toikhongbiet/PreClip.git
+cd PreClip
 
 # Install dependencies
 npm install
@@ -146,7 +146,7 @@ npm run package
 
 ### Project Structure
 ```
-preclip/
+PreClip/
 ├── src/
 │   ├── main.js              # Main process (Electron backend)
 │   ├── renderer.js          # Renderer process (UI logic)
@@ -258,8 +258,7 @@ MIT License - See [LICENSE](LICENSE) file for details
 ## Author
 
 **Phạm Việt Thắng**
-- Email: phamvietthang.geo@gmail.com
-- GitHub: [yourusername](https://github.com/yourusername)
+- GitHub: [Om1toikhongbiet](https://github.com/Om1toikhongbiet)
 
 ## Support & Feedback
 
