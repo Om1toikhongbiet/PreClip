@@ -1,0 +1,12 @@
+# Clipboard App Project Rules & Vibe
+- UI: Side panel docked right, width = 2/5 screen.
+- Layout: Split view (Left: Image pane flex 1.25, Right: Text pane flex 0.75).
+- Design: Strictly Square (border-radius: 0), Dark Mode (#1e1e1e).
+- Performance: Snappy transitions (0.1s)
+- Interaction: 
+    - NO Checkboxes for selection.
+    - Use Shift + Click or Shift + Arrow keys for multiple selection.
+    - Edge scrolling: Auto-scroll when dragging/selecting near top/bottom.
+    - Double-click image to Copy.
+    - Ctrl + Click image to Edit (Open with Windows Default).
+- Memory: Must remember scroll position (scrollTop) and show a Historical Marker.

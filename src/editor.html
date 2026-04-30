@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:;" />
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="./lib/tui-color-picker.css" />
+    <link rel="stylesheet" href="./lib/tui-image-editor.css" />
+    <style>
+      /* Xóa sổ cái logo Toast UI bị lỗi */
+.tui-image-editor-header-logo {
+    display: none !important;
+}
+      :root {
+        color-scheme: dark;
+      }
+
+      html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #1e1e1e;
+        color: #ddd;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 14px;
+        border-bottom: 1px solid #333;
+        background: #252526;
+        flex: 0 0 auto;
+        box-sizing: border-box;
+      }
+
+      .toolbar-left,
+      .toolbar-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .save-btn {
+        background: #0e639c;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+
+      .save-btn:hover {
+        background: #1177bb;
+      }
+
+      .save-btn:active {
+        transform: translateY(1px);
+      }
+
+      .hint {
+        font-size: 12px;
+        color: #888;
+        white-space: nowrap;
+      }
+
+      .editor-stage {
+        flex: 1 1 auto;
+        background: #111;
+        overflow: hidden;
+        min-height: 0;
+      }
+
+      #tui-image-editor-container {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <div class="toolbar-left">
+        <button id="saveBtn" class="save-btn">Save to Clipboard (Ctrl+S)</button>
+        <div class="hint">Built-in image editor</div>
+      </div>
+      <div class="toolbar-right">
+        <div class="hint">Crop · Rotate · Flip · Draw · Text · Shapes · Filters</div>
+      </div>
+    </div>
+
+    <div class="editor-stage">
+      <div id="tui-image-editor-container"></div>
+    </div>
+
+    <script src="./lib/fabric.js"></script>
+    <script src="./lib/tui-code-snippet.min.js"></script>
+    <script src="./lib/tui-color-picker.js"></script>
+    <script src="./lib/tui-image-editor.js"></script>
+  </body>
+</html>

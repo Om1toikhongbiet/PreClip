@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e; /* Màu nền tối giống VS Code */
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  height: 100vh; /* Cao bằng màn hình */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Chống cuộn toàn trang, chỉ cuộn ở từng nửa */
+  opacity: 0;
+  transition: opacity 0.05s ease-in-out;
+  padding-top: 15px;
+}
+
+body.show-app {
+  opacity: 1;
+}
+
+/* --- KHU VỰC 2 NỬA --- */
+.workspace {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.pane {
+  flex: 1; /* Chia đôi 50-50 */
+  padding: 0 20px 20px 20px;
+  overflow-y: auto; /* Hai bên cuộn độc lập */
+}
+
+.left-pane {
+  flex: 1.25; 
+  border-right: 1px solid #333;
+}
+.right-pane {
+  flex: 0.75;
+}
+
+/* --- THIẾT KẾ THẺ (CARDS) VUÔNG VỨC --- */
+.card {
+  background: #252526;
+  border: 2px solid transparent; /* Không viền khi bình thường */
+  margin-bottom: 20px;
+  padding: 12px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.card.selected {
+  outline: 2px solid #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* Khi dùng phím mũi tên di chuyển tới (Con trỏ) */
+.card.active-cursor {
+  border-color: #fff; 
+}
+
+/* Khi bôi chọn nhiều mục bằng Shift */
+.card.selected {
+  background: #094771; /* Xanh bôi đen chuẩn Windows */
+}
+
+.image-card img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.image-card.flash-update {
+  animation: flashUpdate 0.45s ease-in-out;
+}
+
+@keyframes flashUpdate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+  20% {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.65);
+    transform: scale(1.01);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
+}
+
+.hint {
+  font-size: 11px;
+  color: #888;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.text-card textarea {
+  display: block;
+  width: 100%;
+  min-height: 120px;
+  max-height: 66vh;
+  background: transparent;
+  border: none;
+  color: #d4d4d4;
+  font-family: inherit;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-y: auto;
+  resize: none;
+  outline: none; /* Bỏ viền xanh khi gõ */
+}
+
+.historical-marker {
+  text-align: center;
+  font-size: 11px;
+  color: #555;
+  border-top: 1px dashed #333;
+  border-bottom: 1px dashed #333;
+  padding: 15px 0;
+  pointer-events: none;
+}
+
+.app-toast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  background: rgba(20, 20, 20, 0.92);
+  color: #d4d4d4;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 9px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.app-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
